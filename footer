@@ -1,0 +1,164 @@
+'use client';
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+export const Footer = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  return (
+    <footer className="bg-[#111111] text-white flex justify-center">
+      <div
+        className="relative px-0"
+        style={{
+          width: "1200px",
+          // height: "406px",
+          minWidth: "1200px",
+          minHeight: "406px",
+          maxWidth: "1200px",
+          // maxHeight: "406px",
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          paddingTop: "74px",
+          paddingBottom: "30px"
+        }}
+      >
+        {/* Let's talk button */}
+        <div className="absolute top-[70px] right-10">
+          <Link 
+            href="https://calendly.com/sourav9091/meetings?month=2025-04" 
+            target="_blank"
+            className="px-7 py-3 bg-[#216AFB] text-white rounded hover:bg-[#216AFB]/90 text-[15px] font-normal"
+          >
+            Let&apos;s talk
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10" >
+          {/* Logo and Description */}
+          <div className="md:col-span-4 flex flex-col relative">
+            {/* Background Layer */}
+            <div className="absolute top-0 left-0 -z-10">
+              <Image
+                src="https://d2pldvnlcmq63z.cloudfront.net/FE-Asset/Bundle%20Asset/Layer.svg"
+                alt="Background Layer"
+                width={400}
+                height={400}
+                className="opacity-50"
+              />
+            </div>
+            <Link href="https://www.infinityapp.in/" className="inline-block mb-4">
+              <Image
+                src="https://d2pldvnlcmq63z.cloudfront.net/FE-Asset/Bundle%20Asset/Android.png"
+                alt="INFINITY"
+                width={120}
+                height={32}
+                className="h-7 w-auto"
+              />
+            </Link>
+            <p className="text-[17px] text-white mb-6 leading-6 font-normal">
+              Global payments Platform for SMBs and Startups
+            </p>
+            <div className="border-b-2 border-[#216AFB] w-12 mb-6" />
+            <div>
+              <p className="text-[15px] text-white mb-1">+91 95354 82864</p>
+              <p className="text-gray-400 text-[15px]">support@infinityapp.in</p>
+            </div>
+          </div>
+
+          {/* Navigation and Legal */}
+          <div className="md:col-span-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:pl-[100px] text-left">
+            <div className="col-span-1">
+              <h3 className="text-gray-400 text-[15px] font-normal mb-4">Product</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="https://www.infinityapp.in/blog" className="text-white hover:text-[#216AFB] text-[15px] font-light">Blogs</Link>
+                </li>
+                <li>
+                  <Link href="/currency-converter" className="text-white hover:text-[#216AFB] text-[15px] font-light">Currency convertor</Link>
+                </li>
+                <li>
+                  <Link href="https://www.infinityapp.in/help-center" className="text-white hover:text-[#216AFB] text-[15px] font-light">Help centre</Link>
+                </li>
+              </ul>
+            </div>
+            <div className="col-span-1">
+              <h3 className="text-gray-400 text-[15px] font-normal mb-4">Legal</h3>
+              <ul className="space-y-3">
+                <li>
+                  <Link href="https://www.infinityapp.in/privacy" className="text-white hover:text-[#216AFB] text-[15px] font-light">Privacy Policy</Link>
+                </li>
+                <li>
+                  <Link href="https://www.infinityapp.in/terms-and-condition" className="text-white hover:text-[#216AFB] text-[15px] font-light">Terms and conditions</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="border-t border-[#232323] mt-[-15]" />
+
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row items-center justify-between py-6">
+          {/* Social Icons */}
+          <div className="flex gap-4 mb-4 md:mb-0">
+            <div className='w-10 h-10 bg-[#282828] rounded-full flex items-center justify-center' >
+            <Link href="https://twitter.com/infinityapp_in" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+              <Image width={18} height={18} src="https://d2pldvnlcmq63z.cloudfront.net/FE-Asset/Bundle%20Asset/tweeter.svg" alt="Twitter" />
+            </Link>
+            </div>
+            <div className='w-10 h-10 bg-[#282828] rounded-full flex items-center justify-center' >
+              <Link href="https://www.instagram.com/infinityapp_official/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+                <Image width={18} height={18} src="https://d2pldvnlcmq63z.cloudfront.net/FE-Asset/Bundle%20Asset/Instagram.svg" alt="Instagram" />
+              </Link>
+            </div>
+            <div className='w-10 h-10 bg-[#282828] rounded-full flex items-center justify-center' >
+            <Link href="https://www.linkedin.com/company/infinityinvest/" target="_blank" rel="noopener noreferrer" className="hover:opacity-80">
+              <Image width={18} height={18} src="https://d2pldvnlcmq63z.cloudfront.net/FE-Asset/Bundle%20Asset/linkedin.svg" alt="LinkedIn" />
+            </Link>
+            </div>
+           
+           
+          </div>
+          {/* Addresses */}
+          <div className="flex flex-col md:items-start gap-3 mt-4 md:mt-0">
+            <div className="flex items-center gap-2 text-gray-300 text-sm mb-4 pt-4">
+              <span role="img" aria-label="India">
+                <Image src="https://flagcdn.com/in.svg" width={20} height={14} alt="India" className="inline-block" />
+              </span>
+              <Link 
+                href="https://www.google.com/maps/place/Infinity+App/@12.9155494,77.6466547,17z/data=!3m1!4b1!4m6!3m5!1s0x4a27a62d1246ef5:0x53b61153256c23cb!8m2!3d12.9155494!4f77.6466547!16s%2Fg%2F11wx4b42f7?entry=ttu&g_ep=EgoyMDI1MDYxMS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#216AFB] transition-colors"
+              >
+                India: G-Floor, Olsen spaces, Vanganahalli HSR Layout, Bangalore - 560102
+              </Link>
+            </div>
+            <div className="flex items-center gap-2 text-gray-300 text-sm -mt-2">
+              <span role="img" aria-label="USA">
+                <Image src="https://flagcdn.com/us.svg" width={20} height={14} alt="USA" className="inline-block" />
+              </span>
+              USA: 355 Bryant Street Suite 403 San Francisco, CA 94107
+            </div>
+          </div>
+        </div>
+        <div className="text-gray-400 text-sm text-left -mt-6 font-light">
+          © 2024 Scalifi Wealth Pvt Ltd.
+        </div>
+      </div>
+    </footer>
+  );
+};
